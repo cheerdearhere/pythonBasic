@@ -63,12 +63,50 @@ Namespaces are one honking great idea -- let's do more of those! 이름 공간�
 - 기본은 +연산. 이를 묶음으로 만들어 사칙연산, 조작문 등을 처리
 - 고급언어를 저급언어로 번역해 실행시키는 역할
 - 통역과정: python script > compiler > byte code > python VM -> machine code
-
-# V. 파이썬 실행시키기
 - 파이썬 관련 설치
-  - [파이썬 페이지에서 인터프리터를 받음](https://www.python.org/)
-  - [자바 프로그래머인 경우](https://www.jython.org/)
-  - [데이터 처리인경우](https://docs.conda.io/en/latest/)
+  - [기본 CPython: 파이썬 페이지에서 인터프리터를 받음](https://www.python.org/)
+  - [Jython: 자바 프로그래머인 경우](https://www.jython.org/)
+  - [IronPython: .NET 사용자](https://ironpython.net/)
+  - [Stackless: C call Stack이 없는 파이썬](https://github.com/stackless-dev/stackless/wiki)
+  - [PyPy: 바이트코드 전환 과정을 스킵하고 바로 머신 코드로 전환해 빠름. 호환이 나쁜 편](https://www.pypy.org/)
+  - [conda: 데이터 처리인경우](https://docs.conda.io/en/latest/)
   - mac인 경우 [homebrew](https://brew.sh/)로 관리
-- 설치하지 않고 txt 파일을 만들어 작성한 뒤 확장자를 py로 변경. 
-- 원하는 버전으로 실행
+- 우선 설치하지 않고 나중에 필요할때 설치
+  - 환경에 맞는 인터프리터를 선택
+
+- 구동원리
+  - 개발자가 작성한 스크립트
+  - 소스코드를 파이썬 VM에 전달해 기계어(바이트 코드)로 인터프리터가 변환
+    - .py ==> .pyc
+  - 컴퓨터 수행
+# V. 파이썬 실행시키기
+- [테스트용 코드](../src/ex01_basic.py): `print('Hello World')`
+## 1. Interactive Prompt(대화형 프롬프트)
+- python 인터프리터를 설치 
+- cmd/terminal 에서 `python`을 입력하면 실행됨
+```
+...이동
+//C 드라이브의 파이썬 인터프리터 사용
+python D:\developerFiles\workspace\pythonBasic\venv\src\sample.py 
+//패키지 내의 파이썬 인터프리터 사용
+D:\developerFiles\workspace\pythonBasic\venv\Scripts\python.exe D:\developerFiles\workspace\pythonBasic\venv\src\sample.py 
+```
+## 2. 파일 시스템 이용하기
+- txt 파일을 만들어 작성한 뒤 확장자를 py로 변경.
+- 파일 위치로 이동
+- 원하는 인터프리터를 선택
+- 실행: `{python경로} {경로}sample.py `
+- .py 파일 사용하기
+## 3. import
+- .py 확장자 없이 사용
+  - `import sample`
+- import는 한번만 가능(중복 사용 불가)
+  - 다시 쓰고 싶다면: `from imp import reload`
+## 4. IDLE(Integrated Development Environment)
+- 파이썬 통합 개발 환경
+## 5. IDE
+- VSCODE, IntelliJ.. 등 
+## 6.온라인 개발 환경
+- 따로 개발하는 것이 아닌 이상 테스트용으로 좋음
+- [구글 drive colab](https://colab.research.google.com/)
+- [replit](https://replit.com/)

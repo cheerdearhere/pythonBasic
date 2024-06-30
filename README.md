@@ -6,7 +6,7 @@
 
 [파이썬 기초 지식](note/01whatsPython.md)
 
-[파이썬 기본 구조]
+[파이썬 데이터 구조](note/02dataType.md)
 
 [자료형]
 
